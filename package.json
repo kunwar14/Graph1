@@ -1,0 +1,17 @@
+{
+  "name": "adal-node",
+  "author": {
+    "name": "Microsoft Open Technologies Inc",
+    "email": "msopentech@microsoft.com",
+    "url": "http://msopentech.com/"
+  },
+  "dependencies": {
+    "adal-node": "*",
+    "connect-logger": "*",
+    "cookie-parser": "*",
+    "express-session": "*",
+    "crypto": "*",
+    "express": "^4.13.3",
+    "fs": "*"
+  }
+}
