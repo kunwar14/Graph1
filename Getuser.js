@@ -111,5 +111,5 @@ app.get('/one/:id',function(req,res,next){
 		res.send(result);
 	});
 });
-app.listen(3001);
+app.listen(process.env.PORT);
 console.log('listening on 3001');
