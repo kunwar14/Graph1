@@ -63,6 +63,9 @@ app.get('/', function(req, res) {
   res.redirect('/auth');
 });
 
+app.get('/app',function(req,res){
+	res.render('user.html');
+});
 
 function createAuthorizationUrl(state) {
   var authorizationUrl = templateAuthzUrl.replace('<client_id>', sampleParameters.clientId);
