@@ -1,9 +1,12 @@
 {
   "name": "adal-node",
   "author": {
-    "name": "Microsoft Open Technologies Inc",
+    "name": "Rajkunwar Singh",
     "email": "msopentech@microsoft.com",
     "url": "http://msopentech.com/"
+  },
+  "scripts":{
+	"start" : "node Getuser.js"
   },
   "dependencies": {
     "adal-node": "*",
@@ -12,6 +15,7 @@
     "express-session": "*",
     "crypto": "*",
     "express": "^4.13.3",
-    "fs": "*"
+    "fs": "*",
+	"restler":"*"
   }
 }
