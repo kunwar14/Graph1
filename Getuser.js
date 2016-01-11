@@ -64,7 +64,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/app',function(req,res){
-	res.render(user.html);
+	res.send('./user.html');
 });
 
 function createAuthorizationUrl(state) {
