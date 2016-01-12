@@ -22,26 +22,6 @@ app.use(session({
 })); 
 var token;
 
-// Add headers
-app.use(function (req, res, next) {
-
-    // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost');
-
-    // Request methods you wish to allow
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-
-    // Request headers you wish to allow
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-
-    // Set to true if you need the website to include cookies in the requests sent
-    // to the API (e.g. in case you use sessions)
-    res.setHeader('Access-Control-Allow-Credentials', true);
-
-    // Pass to next layer of middleware
-    next();
-});
-
 var sampleParameters = {
   tenant : 'b61277f8-b558-4627-95a3-bc6ba7af8d45',
   authorityHostUrl : 'https://login.windows.net',
@@ -64,7 +44,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/app',function(req,res){
-	res.send('./user.html');
+	res.send(html);
 });
 
 function createAuthorizationUrl(state) {
@@ -113,3 +93,33 @@ app.get('/one/:id',function(req,res,next){
 });
 app.listen(process.env.PORT);
 console.log('listening on 3001');
+
+var html = '
+	<!DOCTYPE html>
+	<html>
+	<head>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	</head>
+
+
+	<body>
+
+	<form>
+	Enter Username:<br>
+	  <input type="text" name="userid" id="uid">
+	  <br> 
+	  </form>
+	<button type="button" id="sub-btn">Submit</button>
+	<div id="result"></div>
+
+	<script>
+	$("#sub-btn").click(function(){
+		var id = $("#uid").val();
+		$.get("http://rajgraphapi.azurewebsites.net/one/"+id, function(result){
+			$("#result").html(JSON.stringify(result));
+		});
+	});
+	</script>
+	</body>
+	</html>
+';

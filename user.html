@@ -16,10 +16,10 @@ Enter Username:<br>
 <div id="result"></div>
 
 <script>
-$('#sub-btn').click(function(){
+$("#sub-btn").click(function(){
 	var id = $("#uid").val();
-	$.get('http://localhost:3001/one/'+id, function(result){
-		$('#result').html(JSON.stringify(result));
+	$.get("http://localhost:3001/one/"+id, function(result){
+		$("#result").html(JSON.stringify(result));
 	});
 });
 </script>
