@@ -80,7 +80,9 @@ app.get('/getAToken', function(req, res) {
 	token = response.accessToken;
 	//res.redirect('./app');
 	res.send(token);
-  });
+//res.send(token);
+ 
+ });
 });
 
 app.get('/one/:id',function(req,res,next){
