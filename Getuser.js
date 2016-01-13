@@ -44,7 +44,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/app',function(req,res){
-	res.send('./user.html');
+	res.send(html);
 });
 
 function createAuthorizationUrl(state) {
@@ -94,3 +94,4 @@ app.get('/one/:id',function(req,res,next){
 app.listen(process.env.PORT);
 console.log('listening on 3001');
 
+var html = '<!DOCTYPE html><html><head><script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script></head><body><form>Enter Username:<br><input type="text" name="userid" id="uid"><br> </form><button type="button" id="sub-btn">Submit</button><div id="result"></div><script>$("#sub-btn").click(function(){var id = $("#uid").val();$.get("http://rajgraphapi.azurewebsites.net/one/"+id, function(result){$("#result").html(JSON.stringify(result));});});</script></body></html>';
