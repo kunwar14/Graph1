@@ -77,10 +77,8 @@ app.get('/getAToken', function(req, res) {
 	console.log(error);
 	return;
     }
-	//token = response.accessToken;
 	token = response.accessToken;
-	res.send(token);
-	//res.redirect('./one/:');
+	res.redirect('./app');
   });
 });
 
