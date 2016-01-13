@@ -96,8 +96,11 @@ app.listen(process.env.PORT);
 console.log('listening on 3001');
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 var html = '<!DOCTYPE html><html><head><script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script></head><body><form>Enter Username:<br><input type="text" name="userid" id="uid"><br> </form><button type="button" id="sub-btn">Submit</button><div id="result"></div><script>$("#sub-btn").click(function(){var id = $("#uid").val();$.get("http://graphapi39.azurewebsites.net/one/"+id, function(result){$("#result").html(JSON.stringify(result));});});</script></body></html>';
 =======
+=======
+>>>>>>> parent of 89ef721... change2016
 var html = '
 	<!DOCTYPE html>
 	<html>
@@ -126,5 +129,9 @@ var html = '
 	</script>
 	</body>
 	</html>
+<<<<<<< HEAD
+';
+>>>>>>> parent of 89ef721... change2016
+=======
 ';
 >>>>>>> parent of 89ef721... change2016
