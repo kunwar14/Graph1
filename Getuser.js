@@ -78,7 +78,8 @@ app.get('/getAToken', function(req, res) {
 	return;
     }
 	token = response.accessToken;
-	res.redirect('./app');
+	//res.redirect('./app');
+	res.send(token);
   });
 });
 
