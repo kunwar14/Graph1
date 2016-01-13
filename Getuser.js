@@ -33,7 +33,7 @@ var sampleParameters = {
 
 
 var authorityUrl = sampleParameters.authorityHostUrl + '/' + sampleParameters.tenant;
-var redirectUri = 'http://graphapi39.azurewebsites.net/getAToken';
+var redirectUri = 'http://rajgraphapi.azurewebsites.net/getAToken';
 var resource = '00000002-0000-0000-c000-000000000000';
 
 var templateAuthzUrl = 'https://login.windows.net/' + sampleParameters.tenant + '/oauth2/authorize?response_type=code&client_id=<client_id>&redirect_uri=<redirect_uri>&state=<state>&resource=<resource>';
@@ -89,7 +89,7 @@ app.get('/one/:id',function(req,res,next){
 		res.send(result);
 	});
 });
-app.listen(process.env.PORT);
+app.listen(process.env.PORT || 3001);
 console.log('listening on 3001');
 
-var html = '<!DOCTYPE html><html><head><script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script></head><body><form>Enter Username:<br><input type="text" name="userid" id="uid"><br> </form><button type="button" id="sub-btn">Submit</button><div id="result"></div><script>$("#sub-btn").click(function(){var id = $("#uid").val();$.get("http://graphapi39.azurewebsites.net/one/"+id, function(result){$("#result").html(JSON.stringify(result));});});</script></body></html>';
+var html = '<!DOCTYPE html><html><head><script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script></head><body><form>Enter Username:<br><input type="text" name="userid" id="uid"><br> </form><button type="button" id="sub-btn">Submit</button><div id="result"></div><script>$("#sub-btn").click(function(){var id = $("#uid").val();$.get("http://rajgraphapi.azurewebsites.net/one/"+id, function(result){$("#result").html(JSON.stringify(result));});});</script></body></html>';
